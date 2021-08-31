@@ -16,11 +16,15 @@ html, body, abbr, article, aside, audio, blockquote, button, canvas, code, div, 
     /*background, headings, buttons*/
     --color-neutral-very-light-gray: hsl(0, 0%, 95%);
     --font-size-copy: 15px;
+
+    --font-family-lexend-deca: 'Lexend Deca', sans-serif;
+    --font-family-big-shoulders: 'Big Shoulders Display', cursive;
 }
 
 .attribution {
     font-size: 11px;
     text-align: center;
+    padding-top: 1rem;
 }
 
 .attribution a {
@@ -34,41 +38,57 @@ body {
     align-items: center;
     height: 100vh;
     width: 100vw;
-    font-size: var(--font-size-copy)
+    font-size: var(--font-size-copy);
+    font-family: var(--font-family-lexend-deca)
 }
+
+* {
+    box-sizing: border-box;
+}
+
 
 .container {
     display: flex;
-    flex-basis: 50%;
-    max-width: 700px;
-    min-width: 700px;
-    min-height: 400px;
-    max-height: 400px;
-
-    border-radius: 05px;
+    border-radius: 5px;
     overflow: hidden;
 }
 
+@media screen and (max-width: 800px) {
+    body {
+        height: 1400px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
 
 .card {
     padding: 4rem 3rem;
-    /*flex-basis: 33%;*/
+    width: 250px;
+    height: 450px;
     color: var(--color-neutral-transparent-white);
 }
 
 .card h2 {
     font-size: 2rem;
     padding: 20px 0;
+    font-family: var(--font-family-big-shoulders)
 }
 
 .card button {
-    padding: 8px 20px;
+    padding: 10px 20px;
     border-radius: 16px;
     border: none;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
     text-decoration: none;
     color: black;
+}
+
+.card button:hover {
+    cursor: pointer;
+    border: 1px solid var(--color-neutral-transparent-white);
 }
 
 .card:nth-of-type(1) {
@@ -79,11 +99,36 @@ body {
     color: var(--color-primary-bright-orange);
 }
 
+.card:nth-of-type(1) button:hover {
+    color: var(--color-neutral-transparent-white);
+    background-color: var(--color-primary-bright-orange);
+}
+
 .card:nth-of-type(2) {
     background-color: var(--color-primary-dark-cyan);
 }
 
+.card:nth-of-type(2) button {
+    color: var(--color-primary-dark-cyan);
+}
+
+.card:nth-of-type(2) button:hover {
+    color: var(--color-neutral-transparent-white);
+    background-color: var(--color-primary-dark-cyan);
+}
+
+
 .card:nth-of-type(3) {
     background-color: var(--color-primary-very-dark-cyan);
 }
+
+.card:nth-of-type(3) button {
+    color: var(--color-primary-very-dark-cyan);
+}
+
+.card:nth-of-type(3) button:hover {
+    color: var(--color-neutral-transparent-white);
+    background-color: var(--color-primary-very-dark-cyan);
+}
+
 
